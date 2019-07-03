@@ -1,5 +1,5 @@
 # floating-video-player-android
-Sample project Floating Video Player for android platform
+Sample Floating Video Player project for android platform
 
 ## Demo
 <div style="dispaly:flex">
