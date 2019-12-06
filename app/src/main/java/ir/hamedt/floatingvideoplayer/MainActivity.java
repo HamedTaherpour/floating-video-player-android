@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
 
-import com.hamedtaherpour.floatinglayout.FloatingLayout;
+import io.hamed.floatinglayout.CallBack;
+import io.hamed.floatinglayout.FloatingLayout;
 
-public class MainActivity extends AppCompatActivity implements FloatingLayout.CallBack {
+
+public class MainActivity extends AppCompatActivity implements CallBack {
 
     private FloatingLayout floatingLayout;
     private VideoView videoView;

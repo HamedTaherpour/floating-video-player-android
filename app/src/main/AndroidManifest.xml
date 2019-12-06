@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.hamedtaherpour.floatinglayout.FloatingLayoutService" />
+        <service android:name="io.hamed.floatinglayout.FloatingLayoutService" />
 
     </application>
 
