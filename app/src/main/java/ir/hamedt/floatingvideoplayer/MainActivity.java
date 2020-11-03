@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.VideoView;
 
 import io.hamed.floatinglayout.FloatingLayout;
-import io.hamed.floatinglayout.callback.FloatingCallBack;
+import io.hamed.floatinglayout.callback.FloatingListener;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FloatingLayout floatingLayout;
     private VideoView videoView;
 
-    private FloatingCallBack floatingCallBack = new FloatingCallBack() {
+    private FloatingListener floatingListener = new FloatingListener() {
         @Override
         public void onCreateListener(View view) {
             initVideoView(view);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     requestPermission();
                 break;
             case R.id.btn_close:
-                floatingLayout.close();
+                floatingLayout.destroy();
                 break;
         }
     }
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showFloating() {
-        floatingLayout = new FloatingLayout(getApplicationContext(), R.layout.floating_layout, floatingCallBack);
+        floatingLayout = new FloatingLayout(getApplicationContext(), R.layout.floating_layout);
+        floatingLayout.setFloatingListener(floatingListener);
         floatingLayout.create();
     }
 }
